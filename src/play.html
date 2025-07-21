@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/output.css" rel="stylesheet" />
+    <title>New Game</title>
+  </head>
+
+  <body class="font-mono">
+    <div class="bg-gray-800 h-screen flex justify-center items-center px-4">
+
+      <div class="w-full md:max-w-md">
+        <div class="text-gray-300 flex gap-3 justify-between items-center">
+          <div>
+            <h1 class="text-4xl text-sky-300 font-bold inline-block">X</h1>
+            <h1 class="text-4xl text-yellow-500 font-bold font-serif inline-block">O</h1>
+          </div>
+          <div class="uppercase shadow-lg rouned-md px-4 py-1">
+            <span class="font-bold text-lg">X</span>
+            <span>turn</span>
+          </div>
+          <div id="restart-btn" class="rounded-md px-3 py-1 bg-gray-400 text-gray-800 cursor-pointer">
+            >
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 text-4xl font-bold text-center mt-10 my-6">
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+          <button class="bg-gray-700 h-20 shadow-lg p-4 rounded-lg text-gray-300">
+          </button>
+        </div>
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="bg-yellow-500 font-bold text-gray-800 inline-block w-full rounded-md uppercase p-2">
+            <p class="text-sm"> X(you) </p>
+            <h1 class="text-4xl font-bold inline-block">0</h1>
+          </div>
+          <div class="bg-gray-400 font-bold text-gray-800 inline-block w-full rounded-md uppercase p-2">
+            <p class="text-sm"> ties </p>
+            <h1 class="text-4xl font-bold inline-block">0</h1>
+          </div>
+          <div class="bg-sky-300 font-bold text-gray-800 inline-block w-full rounded-md uppercase p-2">
+            <p class="text-sm"> O(cpu) </p>
+            <h1 class="text-4xl font-bold inline-block">0</h1>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+  <div id="restart-modal" class="hidden absolute inset-0 h-screen w-screen z-10" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));">
+    <div class="h-48 w-full absolute top-1/2 transform -translate-y-1/2 flex flex-col justify-center items-center bg-gray-700 shadow-lg z-20 uppercase">
+      <h1 class="text-4xl text-gray-300 font-bold flex items-center gap-6">
+        <span>restart game?</span>
+      </h1>
+      <div class="flex gap-3 items-center mt-4">
+        <button id="cancel-btn" class="bg-gray-300 font-bold text-gray-800 inline-block rounded-md p-2 uppercase">
+          no,cancel
+        </button>
+        <button id="restart-game-btn" class="bg-yellow-500 font-bold text-gray-800 inline-block rounded-md p-2 uppercase">
+          yes,restart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-announcement-modal" class="hidden absolute inset-0 h-screen w-screen z-10" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));">
+    <div class="h-48 w-full absolute top-1/2 transform -translate-y-1/2 flex flex-col justify-center items-center bg-gray-700 shadow-lg z-20 uppercase">
+      <p class="text-sm text-gray-300"> you won! </p>
+      <h1 class="text-4xl text-sky-300 font-bold flex items-center gap-6 mt-2">
+        <span class="text-5xl md:text-6xl">X</span>
+        <span>takes the round</span>
+      </h1>
+      <div class="flex gap-3 items-center mt-4">
+        <button id="quit-btn" class="bg-gray-300 font-bold text-gray-800 inline-block rounded-md p-2 uppercase">
+          quit
+        </button>
+        <button id="next-round-btn" class="bg-yellow-500 font-bold text-gray-800 inline-block rounded-md p-2 uppercase">
+          next round
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const restartBtn = document.getElementById('restart-btn');
+    const restartModal = document.getElementById('restart-modal');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const restartGameBtn = document.getElementById('restart-game-btn');
+    const resultAnnouncementModal = document.getElementById('result-announcement-modal');
+    const quitBtn = document.getElementById('quit-btn');
+    const nextRoundBtn = document.getElementById('next-round-btn');
+
+    restartBtn.addEventListener('click', function () {
+      restartModal.classList.remove('hidden');
+    });
+
+    cancelBtn.addEventListener('click', function () {
+      restartModal.classList.add('hidden');
+    });
+
+  </script>
+
+</html>

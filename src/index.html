@@ -10,6 +10,37 @@
   </head>
 
   <body class="font-mono">
+    <div class="bg-gray-800 h-screen flex justify-center items-center px-4">
+
+      <div class="w-full md:max-w-md">
+        <div class="flex gap-3 justify-center items-center">
+          <h1 class="text-4xl text-sky-300 font-bold inline-block">X</h1>
+          <h1 class="text-4xl text-yellow-500 font-bold font-serif inline-block">O</h1>
+        </div>
+        <div class="bg-gray-700 font-bold p-4 rounded-lg shadow-lg text-center text-gray-300 uppercase my-6">
+          <p class="text-sm"> pick player 1's mark </p>
+          <div class="chose-mark bg-gray-800 w-full h-16 flex items-center text-4xl p-1 my-6 rounded-md" role="group">
+            <button id="player-1"
+              class="flex-1 h-full flex justify-center items-center rounded-md cursor-pointer bg-gray-600">
+              x
+            </button>
+            <button id="player-2" class="flex-1 h-full flex justify-center items-center rounded-md cursor-pointer">
+              O
+            </button>
+          </div>
+          <p class="text-sm text-gray-500"> remember : X goes first </p>
+        </div>
+        <div class="mt-10">
+          <button id="cpu" class="bg-yellow-500 font-bold text-gray-800 inline-block w-full rounded-md uppercase p-2">
+            new game(vs cpu)
+          </button>
+          <button id="player" class="bg-sky-300 font-bold text-gray-800 inline-block w-full rounded-md uppercase p-2 mt-2.5">
+            new game(vs player)
+          </button>
+        </div>
+      </div>
+
+    </div>
     
   </body>
 
